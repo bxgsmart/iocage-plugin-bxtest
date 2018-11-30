@@ -7,7 +7,6 @@
     "boot":"on"
    },
   "pkgs": [
-	"java/openjdk8-jre",
 	  "ftp/wget",
 	  "ftp/curl"
   ],
