@@ -1,0 +1,27 @@
+{
+  "name": "bxtest",
+  "release": "11.2-RELEASE",
+  "artifact": "https://github.com/bxgsmart/iocage-plugin-bxtest.git",
+  "properties": {
+    "allow_raw_sockets":"1",
+    "boot":"on"
+   },
+  "pkgs": [
+	"lang/expect",
+	"sysutils/dmidecode",
+  	"sysutils/fusefs-ext4fuse",
+   	"sysutils/fusefs-ntfs",
+	"sysutils/fusefs-exfat",
+	"java/openjdk8-jre"
+  ],
+  "packagesite": "http://pkg.cdn.trueos.org/iocage/unstable",
+  "fingerprints": {
+	  "iocage-plugins": [
+		  {
+		  "function": "sha256",
+		  "fingerprint": "226efd3a126fb86e71d60a37353d17f57af816d1c7ecad0623c21f0bf73eb0c7"
+	  }
+	  ]
+  },
+  "official": false
+}
