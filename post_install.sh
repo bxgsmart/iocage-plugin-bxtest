@@ -1,16 +1,13 @@
 #/bin/sh
 sysrc bxtest_enable="YES"
 
-
-
 pkg fetch -y openjdk8-jre 
 
 mkdir -p /usr/local/nakivo/director
-
 CACHE=`pkg config PKG_CACHEDIR`
 ARCHIVE=`ls -lt -1 ${CACHE:-/var/cache/pkg}/openjdk8-jre-8.* | head -n 1`
 if [ "x$ARCHIVE" != "x" ]; then
-    tar -xpf "$ARCHIVE" -C /usr/local/nakivo/director/ -s '#usr/local/openjdk8-jre#jre#' /usr/local/openjdk8-jre  >>"$LOG" 2>&1
+    tar -xpf "$ARCHIVE" -C /usr/local/nakivo/director/ -s '#usr/local/openjdk8-jre#jre#' /usr/local/openjdk8-jre  
 fi
 
 
