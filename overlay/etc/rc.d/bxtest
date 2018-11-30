@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# PROVIDE: bxtest
+# REQUIRE: DAEMON
+
+. /etc/rc.subr
+
+name="bxtest"
+desc="BX test service"
+start_cmd="bxtest_start"
+stop_cmd="bxtest_stop"
+status_cmd="bxtest_status"
+extra_commands="status"
+LOCK_FILE="/var/spool/lock/bxtest.lock"
+
+bxtest_start()
+{
+	if [ -f "$LOCK_FILE" ]; then
+    	rm -f "$LOCK_FILE" >/dev/null 2>&1
+	fi 
+	
+
+    touch "$LOCK_FILE" >/dev/null 2>&1
+    echo "$name is start"
+    return 0
+}
+
+bxtest_stop()
+{
+     if [ -f $LOCK_FILE ]; then
+        rm -f "$LOCK_FILE" >/dev/null 2>&1
+        echo "Stopping $name:"
+        return 0
+    fi	
+    echo "$name is stopped"
+}
+
+bxtest_status()
+{
+     if [ -f $LOCK_FILE ]; then
+            echo "$name is running"
+            return
+        else
+            echo "$name is not running"
+            return
+        fi
+    fi
+
+    echo "$name is stopped"
+ }
+
+run_rc_command "$1"
