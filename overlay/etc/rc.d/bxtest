@@ -43,7 +43,6 @@ bxtest_status()
         else
             echo "$name is not running"
             return
-        fi
     fi
 
     echo "$name is stopped"
