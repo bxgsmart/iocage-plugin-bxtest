@@ -9,7 +9,7 @@
   "pkgs": [
 	"java/openjdk8-jre"
   ],
-  "packagesite": "http://pkg.FreeBSD.org/FreeBSD:11:amd64/quarterly",
+  "packagesite": "http://pkg.FreeBSD.org/FreeBSD:11:amd64/latest",
   "fingerprints": {
           "plugin-default": [
                   {
