@@ -8,7 +8,8 @@
    },
   "pkgs": [
 	"java/openjdk8-jre",
-	  "sysutils/wget"
+	  "ftp/wget",
+	  "ftp/curl"
   ],
   "packagesite": "http://pkg.FreeBSD.org/FreeBSD:11:amd64/latest",
   "fingerprints": {
