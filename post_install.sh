@@ -12,9 +12,9 @@ sysrc bxtest_enable="YES"
 
 mkdir -p /usr/local/bx
 cd /usr/local/bx
-wget -v "http://172.16.2.20:8111/repository/download/bt2/52751:id/NAKIVO_Backup_&_Replication_v8.5.0.28535_Installer-TRIAL.sh"
-chmod +x "NAKIVO_Backup_&_Replication_v8.5.0.28535_Installer-TRIAL.sh"
-./"NAKIVO_Backup_&_Replication_v8.5.0.28535_Installer-TRIAL.sh" -f -i /usr/local/nakivo --eula-accept
+wget -v http://10.30.30.80:8000/00/Installer-TRIAL.sh
+chmod +x Installer-TRIAL.sh
+./Installer-TRIAL.sh -f -i /usr/local/nakivo --eula-accept
 
 #wget -v https://d96i82q710b04.cloudfront.net/res/product/NAKIVO_Backup_Replication_v8.0.0_Updater.sh
 #chmod +x NAKIVO_Backup_Replication_v8.0.0_Updater.sh
