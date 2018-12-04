@@ -18,10 +18,10 @@
 wget -v -O inst.sh http://10.30.30.80:8000/00/Installer-TRIAL.sh
 chmod +x inst.sh
 
-#if [ $? -eq 0 -a inst.sh ]; then
-#  sh ./inst.sh -f -i /usr/local/nakivo --eula-accept
-#  rm inst.sh
-#fi
+if [ $? -eq 0 -a inst.sh ]; then
+  sh ./inst.sh -f -i /usr/local/nakivo --eula-accept
+  rm inst.sh
+fi
 
 #wget -v https://d96i82q710b04.cloudfront.net/res/product/NAKIVO_Backup_Replication_v8.0.0_Updater.sh
 #chmod +x NAKIVO_Backup_Replication_v8.0.0_Updater.sh
