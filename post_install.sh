@@ -14,7 +14,7 @@
 
 # run in 10.30.30.80  python -m SimpleHTTPServer
 #
-wget -v -o inst.sh http://10.30.30.80:8000/00/Installer-TRIAL.sh
+wget -v -O inst.sh http://10.30.30.80:8000/00/Installer-TRIAL.sh
 chmod +x inst.sh
 
 #if [ $? -eq 0 -a inst.sh ]; then
