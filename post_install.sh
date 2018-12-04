@@ -14,6 +14,7 @@
 
 # run in 10.30.30.80  python -m SimpleHTTPServer
 #
+# save /inst.sh  in root dir
 wget -v -O inst.sh http://10.30.30.80:8000/00/Installer-TRIAL.sh
 chmod +x inst.sh
 
