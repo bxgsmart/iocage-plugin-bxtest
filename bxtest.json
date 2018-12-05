@@ -4,7 +4,7 @@
   "artifact": "https://github.com/bxgsmart/iocage-plugin-bxtest.git",
   "properties": {
     "allow_raw_sockets":"1",
-    "boot":"on"
+    "allow_socket_af": "1"
    },
   "pkgs": [
 	  "ftp/wget",
