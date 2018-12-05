@@ -1,6 +1,6 @@
 #/bin/sh
 
-URL="http://10.30.30.80:8000/00/NAKIVO_Transporter_Installer-8.5.0.r28673-x86_64.sh"
+URL="http://10.30.30.80:8000/NAKIVO_Transporter_Installer-8.5.0.r28673-x86_64.sh"
 SHA256="99bd680c3a528528855b04e577251e8ecee207e0ecd449dcfd526091805b2179"
 
 PRODUCT_ROOT="/usr/local/nakivo"
