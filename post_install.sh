@@ -1,24 +1,33 @@
 #/bin/sh
 
-#D+T=Full
+URL="http://10.30.30.80:8000/00/NAKIVO_Transporter_Installer-8.5.0.r28673-x86_64.sh"
+SHA256="99bd680c3a528528855b04e577251e8ecee207e0ecd449dcfd526091805b2179"
 
-SHA256="e6f95b6c39fee01581e3e144c11b70526b859d49808eb6fb8ec239efd1fc011b"
+PRODUCT_ROOT="/usr/local/nakivo"
+INSTALL="inst.sh"
 
-
-# run in 10.30.30.80  python -m SimpleHTTPServer
-
-wget -v -O inst.sh http://10.30.30.80:8000/00/Installer-TRIAL.sh
-if [ $? -eq 0 -a inst.sh ]; then
-	CHECKSUM=`sha256 -q inst.sh`
-	if [ "$SHA256" == "$CHECKSUM" ]; then
-		sh ./inst.sh -f -i /usr/local/nakivo --eula-accept
-	fi	
+curl --fail --tlsv1.2 -o $INSTALL $URL
+if [ $? -ne 0 -o ! -e $INSTALL ]; then
+    echo 'ERROR: Failed to get NAKIVO Backup and Replication Transporter installer'
+    rm $INSTALL
+    exit 1
 fi
 
-rm inst.sh
+CHECKSUM=`sha256 -q $INSTALL`
+if [ "$SHA256" != "$CHECKSUM" ]; then
+    echo 'ERROR: NAKIVO Backup and Replication Transporter incorrect checksum'
+    rm $INSTALL
+    exit 2
+fi
 
+sh ./$INSTALL -s -i "$PRODUCT_ROOT" --eula-accept
+if [ $? -ne 0 ]; then
+    echo 'ERROR: NAKIVO Backup and Replication Transporter install failed'
+    rm $INSTALL
+    exit 3
+fi
+rm $INSTALL
 
-#wget -v https://d96i82q710b04.cloudfront.net/res/product/NAKIVO_Backup_Replication_v8.0.0_Updater.sh
-#chmod +x NAKIVO_Backup_Replication_v8.0.0_Updater.sh
-#./NAKIVO_Backup_Replication_v8.0.0_Updater.sh -f -i /usr/local/nakivo --eula-accept
+exit 0
+
 
