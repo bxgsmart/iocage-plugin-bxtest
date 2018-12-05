@@ -8,7 +8,7 @@ INSTALL="inst.sh"
 
 curl --fail --tlsv1.2 -o $INSTALL $URL
 if [ $? -ne 0 -o ! -e $INSTALL ]; then
-    echo 'ERROR: Failed to get NAKIVO Backup and Replication Transporter installer'
+    echo 'ERROR: Failed to get NAKIVO Backup and Replication Transporter installer' 1>&2
     rm $INSTALL
     exit 1
 fi
