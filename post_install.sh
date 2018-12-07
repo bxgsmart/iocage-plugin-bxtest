@@ -37,7 +37,7 @@ mv $SVC_PATH/tomcat/conf/server-linux.xml_ $SVC_PATH/tomcat/conf/server-linux.xm
 #enforce EULA
 PROFILE=`ls "$SVC_PATH/userdata/"*.profile 2>/dev/null | head -1`
 if [ "x$PROFILE" != "x" ]; then
-    sed -e 's@"system.licensing.eula.must.agree": true@"system.licensing.eula.must.agree": false@' "$PROFILE" >"${PROFILE}_"
+    sed -e 's@"system.licensing.eula.must.agree": false@"system.licensing.eula.must.agree": true@' "$PROFILE" >"${PROFILE}_"
     mv "${PROFILE}_" "$PROFILE"
 fi
 
