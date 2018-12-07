@@ -41,4 +41,4 @@ if [ "x$PROFILE" != "x" ]; then
     mv "${PROFILE}_" "$PROFILE"
 fi
 
-service nkv_dirsvc start
+#service nkv_dirsvc start
