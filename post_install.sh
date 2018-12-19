@@ -1,4 +1,5 @@
 #/bin/sh
+pwd >/test.txt
 
 #URL="http://10.30.30.80:8000/NAKIVO_Transporter_Installer-8.5.0.r28673-x86_64.sh"
 URL="http://10.30.30.80:8000/Installer-TRIAL.sh"
